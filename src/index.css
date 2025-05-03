@@ -112,10 +112,24 @@
 
 @layer utilities {
   .gradient {
-    @apply bg-gradient-to-br from-gray-500 via-gray-200 to-white;
+    background-image: linear-gradient(
+      to bottom right,
+      #6b7280,
+      #e5e7eb,
+      #ffffff
+    );
   }
+
   .gradient-title {
-    @apply gradient text-transparent bg-clip-text;
+    background-image: linear-gradient(
+      to bottom right,
+      #6b7280,
+      #e5e7eb,
+      #ffffff
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
 
