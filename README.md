@@ -4,8 +4,7 @@ Hirrd is a modern, full-featured job portal application built with **React.js**,
 
 ## 🚀 Demo
 
-👉 Try the live demo here: [Hirrd Job Portal](#)  
-(_Replace `#` with your deployed URL_)
+👉 Try the live demo here: [Hirrd Job Portal](#)
 
 ---
 
