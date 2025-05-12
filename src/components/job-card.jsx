@@ -12,7 +12,7 @@ import { deleteJob, saveJob } from "@/api/jobs";
 import { useUser, useAuth } from "@clerk/clerk-react";
 import { useState } from "react";
 import { BarLoader } from "react-spinners";
-import supabaseClient from "@/utils/supabase"; // Add this import
+import supabaseClient from "@/utils/supabase";
 
 const JobCard = ({
   job,
@@ -27,11 +27,12 @@ const JobCard = ({
 
   const handleSaveJob = async () => {
     setIsSaving(true);
-    const currentSavedState = job.saved?.length > 0; // Define locally
-    try {
-      const token = await getToken({ template: "supabase" });
-      const savedId = job.saved?.[0]?.id;
+    // Use savedInit as a fallback if job.saved is not available
+    const currentSavedState = job.saved?.length > 0 || savedInit;
+    const token = await getToken({ template: "supabase" });
+    const savedId = job.saved?.[0]?.id;
 
+    try {
       const result = await saveJob(
         token,
         {
@@ -44,8 +45,15 @@ const JobCard = ({
         }
       );
 
-      // Update local state
-      setSaved(!currentSavedState);
+      // Update state based on server response
+      if (result.action === "deleted") {
+        setSaved(false);
+      } else if (
+        result.action === "created" ||
+        result.action === "already_exists"
+      ) {
+        setSaved(true);
+      }
 
       // Trigger parent refresh
       onJobAction();
@@ -62,8 +70,7 @@ const JobCard = ({
       }
     } catch (error) {
       console.error("Save error:", error);
-      // Revert UI state on error
-      setSaved(currentSavedState);
+      setSaved(currentSavedState); // Revert on error
     } finally {
       setIsSaving(false);
     }
