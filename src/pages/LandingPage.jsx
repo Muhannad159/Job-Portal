@@ -27,7 +27,7 @@ const Landing = () => {
               and get <img src="/logo.png" className="h-14 sm:h-24 lg:h-32" />
             </span>
           </h1>
-          <p className="text-gray-300 sm:mt-4 text-xs sm:text-xl">
+          <p className="text-gray-300 sm:mt-4 text-xs sm:text-2xl">
             Explore thousands of job listings or find the perfect candidate
           </p>
         </section>
@@ -69,7 +69,7 @@ const Landing = () => {
           </div> */}
         </div>
 
-        <section className="grid grid-cols-1 px-4  md:grid-cols-2 gap-4 ">
+        <section className="grid grid-cols-1 px-4  md:grid-cols-2 gap-4 text-xl">
           <Card>
             <CardHeader>
               <CardTitle className="font-bold">For Job Seekers</CardTitle>
@@ -87,10 +87,13 @@ const Landing = () => {
             </CardContent>
           </Card>
         </section>
+
         <Accordion type="multiple" className="w-full px-5">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index + 1}`}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionTrigger className="text-xl">
+                {faq.question}
+              </AccordionTrigger>
               <AccordionContent>{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}

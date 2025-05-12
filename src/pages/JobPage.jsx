@@ -55,7 +55,7 @@ const Job = () => {
   }
 
   return (
-    <div className="flex flex-col gap-8 mt-5 mr-3 ml-3 ">
+    <div className="flex flex-col gap-8 mt-5 mr-3 ml-3 text-lg">
       <div className="flex flex-col-reverse gap-6 md:flex-row justify-between items-center">
         <h1 className="gradient-title font-extrabold pb-3 text-4xl sm:text-6xl">
           {job?.title}
@@ -70,7 +70,7 @@ const Job = () => {
         <div className="flex gap-2">
           <Briefcase /> {job?.applications?.length} Applicants
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 ">
           {job?.isOpen ? (
             <>
               <DoorOpen /> Open
@@ -86,7 +86,11 @@ const Job = () => {
       {job?.recruiter_id === user?.id && (
         <Select onValueChange={handleStatusChange}>
           <SelectTrigger
-            className={`w-full ${job?.isOpen ? "bg-green-950" : "bg-red-950"}`}
+            className={`w-1/3 h-14 ${
+              job?.isOpen ? "bg-green-950" : "bg-red-950"
+            } 
+              text-white font-semibold rounded-lg shadow-md hover:shadow-lg 
+              transition-all duration-200 px-4`}
           >
             <SelectValue
               placeholder={
@@ -94,9 +98,13 @@ const Job = () => {
               }
             />
           </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="open">Open</SelectItem>
-            <SelectItem value="closed">Closed</SelectItem>
+          <SelectContent className="h-24 overflow-y-auto bg-black border border-gray-200 rounded-md shadow-lg">
+            <SelectItem value="open" className="h-10 px-4 hover:bg-gray-100">
+              Open
+            </SelectItem>
+            <SelectItem value="closed" className="h-10 px-4 hover:bg-gray-100">
+              Closed
+            </SelectItem>
           </SelectContent>
         </Select>
       )}

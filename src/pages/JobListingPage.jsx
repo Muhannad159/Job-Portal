@@ -74,8 +74,8 @@ const JobListing = () => {
   }
 
   return (
-    <div className="">
-      <h1 className="gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8">
+    <div className="m-2 text-xl">
+      <h1 className="gradient-title font-extrabold text-6xl sm:text-6xl text-center pb-8">
         Latest Jobs
       </h1>
       <form
@@ -131,7 +131,7 @@ const JobListing = () => {
           </SelectContent>
         </Select>
         <Button
-          className="sm:w-1/2"
+          className="sm:w-1/8"
           variant="destructive"
           onClick={clearFilters}
         >

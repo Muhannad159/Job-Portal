@@ -10,7 +10,7 @@ const AppLayout = () => {
 
         <Outlet />
       </main>
-      <div className="p-6 mt-3 text-center bg-blue-900 ">
+      <div className="p-3 mt-2 text-center bg-blue-600 ">
         Made for the future.
       </div>
     </>
