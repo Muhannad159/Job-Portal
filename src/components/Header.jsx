@@ -34,7 +34,7 @@ const Header = () => {
     <>
       <nav className="flex items-center px-8 justify-between py-4">
         <Link>
-          <img src="public/logo.png" className="h-20" />
+          <img src="/logo.png" className="h-20" />
         </Link>
         {/* <Button variant="outline">Login</Button> */}
         <SignedOut>
