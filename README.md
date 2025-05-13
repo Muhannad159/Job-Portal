@@ -6,7 +6,7 @@ Hirrd is a modern, full-featured job portal application built with **React.js**,
 
 ## 🚀 Demo
 
-👉 Try the live demo here: ["https://hirrd-muhannad.vercel.app/"](#)
+👉 Try the live demo here: [hirrd](https://hirrd-muhannad.vercel.app/)
 
 ---
 
