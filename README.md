@@ -1,10 +1,12 @@
 # Hirrd – Full Stack Job Portal
 
+![Hirrd Screenshot](public/app-ss.png)
+
 Hirrd is a modern, full-featured job portal application built with **React.js**, **Tailwind CSS**, **Supabase**, **Clerk**, and **Shadcn UI**. Designed for both job seekers and recruiters, Hirrd offers seamless job search, application tracking, and job posting experiences in a clean and user-friendly interface.
 
 ## 🚀 Demo
 
-👉 Try the live demo here: [Hirrd Job Portal](#)
+👉 Try the live demo here: ["https://hirrd-muhannad.vercel.app/"](#)
 
 ---
 
