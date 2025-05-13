@@ -55,7 +55,7 @@ Hirrd provides two distinct experiences based on the user's role:
 
 ```bash
 # Clone the repository
-git clone https://github.com/piyush-eon/job-portal.git
+git clone https://github.com/Muhannad159/Job-Portal.git
 cd job-portal
 
 # Install dependencies
